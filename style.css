@@ -1,0 +1,273 @@
+/*  (-CSS reset- Credit: Josh Comeau ) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*  CSS Reset End */
+
+:root {
+  --bg-clr: hsl(229, 57%, 11%);
+  --card-bg-clr: hsl(228, 56%, 26%);
+
+  --ff-base: "Raleway", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+
+  background-image: url(images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100vw 50%;
+  background-color: var(--bg-clr);
+
+  font-family: var(--ff-base);
+}
+
+/* Main Container */
+
+#main-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Icon Section */
+
+#icons-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 320px;
+  padding: 30px;
+  border-radius: 14px 92px 14px 14px;
+  background-color: var(--card-bg-clr);
+}
+
+/* Icon Container */
+
+#icons-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#icons-container picture {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-clr);
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+}
+
+/* Storage Section */
+
+#storage-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0px;
+  background-color: var(--card-bg-clr);
+  width: 540px;
+  height: 154px;
+  border-radius: 14px;
+  padding: 30px;
+  margin-left: -150px;
+
+  position: relative;
+}
+
+/* Storage Section Header */
+
+#storage-section-title {
+  font-weight: var(--fw-regular);
+  color: white;
+  font-size: 14px;
+}
+
+#remaining-storage {
+  font-weight: var(--fw-bold);
+}
+
+/* Custom Shape */
+
+#shape {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  width: 179px;
+  height: 72px;
+  border-radius: 14px 14px 0 14px;
+  background-color: white;
+}
+
+#shape::before {
+  content: "";
+  position: absolute;
+  left: 87.8%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-top: 22px solid white;
+  border-left: 22px solid transparent;
+}
+
+#shape-span {
+  font-size: 14px;
+  color: grey;
+}
+
+/* Input Range */
+
+#storage-range-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: var(--bg-clr);
+}
+
+#storageRange {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 14px;
+  border-radius: 10px;
+}
+
+#storageRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: white;
+}
+
+#storageRange::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Storage Section Footer Container */
+
+#storage-section-footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#storage-section-footer-container h2 {
+  font-size: 14px;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+
+  /* Main Container */
+
+  #main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Storage Section */
+
+  #storage-section {
+    width: 320px;
+    margin-left: 0;
+    margin-top: -50px;
+  }
+
+  /* Storage Section Header */
+
+  #storage-section-title {
+    margin-bottom: 15px;
+  }
+
+  /* Custom Shape */
+
+  #shape {
+    position: absolute;
+    top: 130px;
+    left: 23%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    width: 150px;
+    height: 70px;
+    border-radius: 14px;
+    background-color: white;
+  }
+
+  #shape::before {
+    display: none;
+  }
+}

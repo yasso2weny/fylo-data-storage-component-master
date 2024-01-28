@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- JS File -->
+    <script src="script.js"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body>
+    <main id="main-container">
+      <section id="icons-section">
+        <picture><img src="images/logo.svg" alt="logo" /></picture>
+        <div id="icons-container">
+          <picture
+            ><img src="images/icon-document.svg" alt="document-icon"
+          /></picture>
+          <picture
+            ><img src="images/icon-folder.svg" alt="folder-icon"
+          /></picture>
+          <picture
+            ><img src="images/icon-upload.svg" alt="upload-icon"
+          /></picture>
+        </div>
+      </section>
+
+      <div id="shape">
+        <h1>185</h1>
+        <h2 id="shape-span">GB Left</h2>
+      </div>
+
+      <section id="storage-section">
+        <h2 id="storage-section-title">
+          You've used <span id="remaining-storage">815 GB</span> of your storage
+        </h2>
+
+        <!-- Shape Goes Here -->
+
+        <div id="storage-section-footer">
+          <div id="storage-range-wrapper">
+            <input
+              type="range"
+              id="storageRange"
+              min="0"
+              max="1000"
+              value="815"
+              disabled
+            />
+          </div>
+
+          <div id="storage-section-footer-container">
+            <h2>0 GB</h2>
+            <h2>1000 GB</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
